@@ -3,8 +3,9 @@ function getSongs(song){
     .then(res => res.json())
     .then(data => {
         const result = data.data;
+        searchResult = document.getElementById('search-result');
+        searchResult.innerHTML = "";
         for(let i=0;i<10;i++){
-            const searchResult = document.getElementById('search-result');
             searchResult.innerHTML +=`<div class="single-result row align-items-center my-3 p-3">
             <div class="col-md-9">
                 <h3 class="lyrics-name">${result[i].title}</h3>
